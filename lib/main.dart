@@ -1,10 +1,11 @@
+import 'package:currencyconvt/currency_convertor_cupertino.dart';
 import 'package:currencyconvt/currency_convertor_materialdesign_app.dart';
 import 'package:flutter/material.dart'; // this is for the android widgets
 import 'package:flutter/cupertino.dart'; // this is for the cupertino apple widgets
 
 void main() {
   runApp(
-    const MyApp(),
+    const MaterialApp(), // here now we can run either cupertino class or the material class
   ); //just pass MyApp class in this to directly run the app here
   //types of widgets
   //Stateless widget- in this the data is immutable it means once the data is defined it can not be changed(it is immutable)
@@ -22,7 +23,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home:
-          CurrencyConvertorMaterial(), // if we check the top of the code we see that it import the currencyconvert.dart file in the main.dart file
+          CurrencyConvertorMaterial(), // if we check the top of the code we see that it import the currency convert.dart file in the main.dart file
     ); // here we need to override the built function of the Stateless widget when we try to hover the cursor to the stateless widget and click ctrl+click then we reach the directory of the stateless widget
   }
 }
+
+class MyCupertinoApp extends StatelessWidget {
+  const MyCupertinoApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const CupertinoApp(
+      home:
+      CurrencyConvertorCupertinoPage(),
+    );
+    return const Placeholder();
+  }
+}
+
